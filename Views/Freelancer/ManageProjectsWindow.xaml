@@ -1,0 +1,28 @@
+﻿<Window x:Class="FreelancerClientPlatform.Views.Freelancer.ManageProjectsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Manage Projects" Height="450" Width="991">
+    <Grid Background="#2C3E50">
+        <ListView x:Name="ActiveProjectsListView" ItemsSource="{Binding ActiveProjects}" Margin="10" VerticalAlignment="Top" Height="350">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Project Name" DisplayMemberBinding="{Binding name}" Width="120"/>
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding description}" Width="180"/>
+                    <GridViewColumn Header="Timeline" DisplayMemberBinding="{Binding timeline}" Width="80"/>
+                    <GridViewColumn Header="Budget" DisplayMemberBinding="{Binding budget}" Width="80"/>
+                    <GridViewColumn Header="Client Username" DisplayMemberBinding="{Binding username}" Width="130"/>
+                    <GridViewColumn Header="Client Email" DisplayMemberBinding="{Binding email}" Width="180"/>
+                    <GridViewColumn Header="Client Phone" DisplayMemberBinding="{Binding phone}" Width="120"/>
+                    <GridViewColumn Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Complete Project" Width="90" Height="25" Background="#E74C3C" Foreground="White" Click="CompleteProject_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

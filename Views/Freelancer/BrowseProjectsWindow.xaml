@@ -1,0 +1,32 @@
+﻿<Window x:Class="FreelancerClientPlatform.Views.Freelancer.BrowseProjectsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreelancerClientPlatform.Views.Freelancer"
+        mc:Ignorable="d"
+        Title="Browse Projects" Height="450" Width="800" Background="#2C3E50">
+
+    <Grid Margin="20">
+        <TextBlock Text="Available Projects" Foreground="White" FontSize="24" FontWeight="Bold" Margin="0,10,0,20" HorizontalAlignment="Center"/>
+
+        <DataGrid x:Name="ProjectsGrid" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  Background="#E9EBEE" Foreground="Black" BorderBrush="#BDC3C7" BorderThickness="1" 
+                  ItemsSource="{Binding AvailableProjects}" Margin="0,50,0,0">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Project Name" Binding="{Binding name}" Width="200"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding description}" Width="300"/>
+                <DataGridTextColumn Header="Timeline" Binding="{Binding timeline}" Width="100"/>
+                <DataGridTextColumn Header="Budget" Binding="{Binding budget}" Width="100"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Submit Bid" Background="#3498DB" Foreground="White" Click="SubmitBid_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

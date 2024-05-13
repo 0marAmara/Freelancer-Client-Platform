@@ -1,0 +1,22 @@
+﻿<Window x:Class="FreelancerClientPlatform.Views.Freelancer.FreelancerDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreelancerClientPlatform.Views.Freelancer"
+        mc:Ignorable="d"
+        Title="Freelancer Dashboard" Height="450" Width="800">
+    <Grid Background="#2C3E50">
+        <TextBlock Text="Welcome " Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"/>
+        <TextBlock x:Name="UsernameField" Foreground="White" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,35,0,0"/>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="396">
+            <Button Content="Browse and Bid on Projects" Margin="5" Height="40" FontSize="18" Background="#9B59B6" Foreground="White" Click="BrowseProjects_Click"/>
+            <Button Content="Manage Ongoing Projects" Margin="5" Height="40" FontSize="18" Background="#E74C3C" Foreground="White" Click="ManageProjects_Click"/>
+            <Button Content="View Completed Projects" Margin="5" Height="40" FontSize="18" Background="#3498DB" Foreground="White" Click="ViewCompletedProjects_Click"/>
+
+            <!-- Logout Button -->
+            <Button Content="Logout" Margin="5" Height="40" FontSize="18" Background="#34495E" Foreground="White" Click="Logout_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
